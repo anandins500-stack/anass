@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anas Ansari | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--text:#14182b;--muted:#5b6280;--a:#6c3cf0;--b:#00a8c6;--line:#dfe3f0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0a0d1a;--card:#121730;--text:#eef0ff;--muted:#9aa2c7;--a:#8b5cff;--b:#22d3ee;--line:#222a50}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0a0d1a;--card:#121730;--text:#eef0ff;--muted:#9aa2c7;--a:#8b5cff;--b:#22d3ee;--line:#222a50}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+svg.i{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.2em}
+canvas#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 5%;background:var(--bg);border-bottom:1px solid var(--line)}
+.logo{font-family:Orbitron,sans-serif;font-weight:900;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.2rem}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.92rem}
+nav a:hover{color:var(--a)}
+.btn-i{background:none;border:1px solid var(--line);color:var(--text);width:40px;height:40px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
+#menu{display:none}
+section{padding:80px 5%;max-width:1100px;margin:auto}
+h2{font-family:Orbitron,sans-serif;font-size:1.8rem;margin-bottom:28px}
+h2 span{color:var(--a)}
+#home{min-height:88vh;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.hi{color:var(--b);font-weight:600}
+h1{font-family:Orbitron,sans-serif;font-size:clamp(2.2rem,7vw,4.2rem);line-height:1.1}
+h1 span{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.type{font-size:1.3rem;color:var(--muted);min-height:2em}
+.type b{color:var(--text)}
+.cur{border-right:2px solid var(--a);animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{border-color:transparent}}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.btn{display:inline-flex;gap:8px;align-items:center;padding:12px 24px;border-radius:50px;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:inherit;font-size:1rem;color:#fff;background:linear-gradient(90deg,var(--a),var(--b));transition:transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn.o{background:none;color:var(--text);border:1px solid var(--a)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--a)}
+.card .big{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;margin-bottom:12px;font-size:1.3rem}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.93rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-top:22px}
+.stat{text-align:center;padding:16px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.stat b{display:block;font-family:Orbitron,sans-serif;font-size:1.7rem;color:var(--a)}
+.skill{margin-bottom:18px}
+.skill div.t{display:flex;justify-content:space-between;font-weight:600;margin-bottom:6px}
+.bar{height:10px;border-radius:10px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:10px;background:linear-gradient(90deg,var(--a),var(--b));transition:width 1.4s ease}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags span{padding:6px 14px;border-radius:50px;border:1px solid var(--line);background:var(--card);font-size:.85rem}
+#game{text-align:center;padding:40px 20px;border-radius:18px;border:2px dashed var(--a);cursor:pointer;user-select:none;background:var(--card);transition:background .15s}
+#game.wait{background:#c0392b;color:#fff}
+#game.go{background:#1faa59;color:#fff}
+#game h3{font-family:Orbitron,sans-serif}
+.contact{text-align:center}
+.contact p{color:var(--muted);margin-bottom:20px}
+footer{text-align:center;padding:26px;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}
+.rv{opacity:0;transform:translateY(30px);transition:all .8s}
+.rv.on{opacity:1;transform:none}
+@media(max-width:720px){#menu{display:grid}nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px 5%;border-bottom:1px solid var(--line)}nav ul.open{display:flex}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+<symbol id="pad" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="6"/><path d="M7 10v4M5 12h4M15 11h.01M18 13h.01"/></symbol>
+<symbol id="code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+<symbol id="term" viewBox="0 0 24 24"><path d="M4 17l6-6-6-6M12 19h8"/></symbol>
+<symbol id="cap" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c3 2 9 2 12 0v-5"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+<symbol id="bolt" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></symbol>
+<symbol id="cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9zM9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></symbol>
+</svg>
+<canvas id="bg"></canvas>
+
+<nav>
+<div class="logo">ANAS.DEV</div>
+<ul id="links">
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#gaming">Gaming</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+<div style="display:flex;gap:8px">
+<button class="btn-i" id="theme" aria-label="Theme badlo"><svg class="i"><use href="#moon"/></svg></button>
+<button class="btn-i" id="menu" aria-label="Menu">☰</button>
+</div>
+</nav>
+
+<section id="home">
+<p class="hi">👋 Namaste, main hoon</p>
+<h1><span>Anas Ansari</span></h1>
+<p class="type">Main ek <b id="typed"></b><span class="cur">&nbsp;</span></p>
+<p style="color:var(--muted);max-width:560px">Class 10 ka student, jise coding aur gaming dono se pyaar hai. Main C, C++ aur Python mein programs banata hoon aur roz kuch naya seekhta hoon.</p>
+<div class="cta">
+<a class="btn" href="https://instagram.com/anas_says_" target="_blank" rel="noopener"><svg class="i"><use href="#insta"/></svg> Instagram</a>
+<a class="btn o" href="#projects"><svg class="i"><use href="#code"/></svg> Mere Projects</a>
+</div>
+</section>
+
+<section id="about">
+<h2 class="rv">About <span>Me</span></h2>
+<div class="grid">
+<div class="card rv"><div class="big"><svg class="i"><use href="#user"/></svg></div><h3>Main Kaun Hoon</h3><p>Mera naam Anas Ansari hai. Mujhe naye logic banana aur problems solve karna bahut pasand hai.</p></div>
+<div class="card rv"><div class="big"><svg class="i"><use href="#cap"/></svg></div><h3>Education</h3><p>Abhi main 10th class mein padh raha hoon, aur padhai ke saath coding bhi seekh raha hoon.</p></div>
+<div class="card rv"><div class="big"><svg class="i"><use href="#pad"/></svg></div><h3>Gamer</h3><p>Gaming mera passion hai. Games se strategy, speed aur teamwork seekhta hoon.</p></div>
+</div>
+<div class="stats rv">
+<div class="stat"><b data-n="3">0</b>Languages</div>
+<div class="stat"><b data-n="10">0</b>Class</div>
+<div class="stat"><b data-n="100" data-s="%">0</b>Josh</div>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="rv">My <span>Skills</span></h2>
+<div class="rv">
+<div class="skill"><div class="t"><span><svg class="i"><use href="#term"/></svg> Python</span><span>75%</span></div><div class="bar"><i data-w="75"></i></div></div>
+<div class="skill"><div class="t"><span><svg class="i"><use href="#cpu"/></svg> C++</span><span>70%</span></div><div class="bar"><i data-w="70"></i></div></div>
+<div class="skill"><div class="t"><span><svg class="i"><use href="#code"/></svg> C Language</span><span>72%</span></div><div class="bar"><i data-w="72"></i></div></div>
+<div class="skill"><div class="t"><span><svg class="i"><use href="#bolt"/></svg> Web (HTML, CSS, JS)</span><span>50%</span></div><div class="bar"><i data-w="50"></i></div></div>
+<div class="tags"><span>Problem Solving</span><span>Logic Building</span><span>Teamwork</span><span>Fast Learner</span><span>Strategy</span></div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="rv">My <span>Projects</span></h2>
+<div class="grid">
+<div class="card rv"><div class="big"><svg class="i"><use href="#term"/></svg></div><h3>Number Guessing Game</h3><p>Python mein bana game jisme computer ka number guess karna hota hai.</p><div class="tags"><span>Python</span></div></div>
+<div class="card rv"><div class="big"><svg class="i"><use href="#cpu"/></svg></div><h3>Calculator</h3><p>C++ mein banaya simple calculator jo add, minus, multiply aur divide karta hai.</p><div class="tags"><span>C++</span></div></div>
+<div class="card rv"><div class="big"><svg class="i"><use href="#code"/></svg></div><h3>Student Record</h3><p>C language mein students ka data save aur dikhane wala program.</p><div class="tags"><span>C</span></div></div>
+</div>
+</section>
+
+<section id="gaming">
+<h2 class="rv">Gaming <span>Zone</span></h2>
+<p class="rv" style="color:var(--muted);margin-bottom:18px">Gamer ho toh apna reaction test karo! Box pe click karo, hara hote hi turant dobara click karo.</p>
+<div id="game" class="rv"><h3 id="gt">Start karne ke liye click karo</h3><p id="gs">Best: --</p></div>
+</section>
+
+<section id="contact" class="contact">
+<h2 class="rv">Contact <span>Me</span></h2>
+<p class="rv">Baat karni hai ya collab karna hai? Instagram pe DM karo!</p>
+<a class="btn rv" href="https://instagram.com/anas_says_" target="_blank" rel="noopener"><svg class="i"><use href="#insta"/></svg> @anas_says_</a>
+</section>
+
+<footer>© <span id="yr"></span> Anas Ansari. Banaya gaya ❤️ ke saath, HTML, CSS aur JavaScript se.</footer>
+
+<script>
+(function(){
+var root=document.documentElement;
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('theme').onclick=function(){
+var dark=getComputedStyle(root).getPropertyValue('--bg').trim()==='#0a0d1a';
+root.setAttribute('data-theme',dark?'light':'dark');
+};
+var ul=document.getElementById('links');
+document.getElementById('menu').onclick=function(){ul.classList.toggle('open')};
+ul.onclick=function(){ul.classList.remove('open')};
+
+var words=['Python Coder','C++ Learner','C Programmer','Pro Gamer','Future Developer'],wi=0,ci=0,del=false,el=document.getElementById('typed');
+(function tick(){
+var w=words[wi];
+el.textContent=w.slice(0,ci);
+if(!del&&ci<w.length){ci++;setTimeout(tick,90)}
+else if(!del){del=true;setTimeout(tick,1200)}
+else if(ci>0){ci--;setTimeout(tick,45)}
+else{del=false;wi=(wi+1)%words.length;setTimeout(tick,300)}
+})();
+
+var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(!e.isIntersecting)return;
+e.target.classList.add('on');
+e.target.querySelectorAll('.bar i').forEach(function(b){b.style.width=b.dataset.w+'%'});
+e.target.querySelectorAll('[data-n]').forEach(function(n){
+var t=+n.dataset.n,s=n.dataset.s||'',c=0,st=Math.max(1,Math.ceil(t/40));
+var h=setInterval(function(){c+=st;if(c>=t){c=t;clearInterval(h)}n.textContent=c+s},35);
+});
+io.unobserve(e.target);
+})},{threshold:.2});
+document.querySelectorAll('.rv').forEach(function(x){io.observe(x)});
+
+var g=document.getElementById('game'),gt=document.getElementById('gt'),gs=document.getElementById('gs'),st='idle',t0=0,to,best=null;
+g.onclick=function(){
+if(st==='idle'){
+st='wait';g.className='wait';gt.textContent='Ruko... hara hone ka wait karo';
+to=setTimeout(function(){st='go';g.className='go';gt.textContent='ABHI CLICK KARO!';t0=performance.now()},1000+Math.random()*2500);
+}else if(st==='wait'){
+clearTimeout(to);st='idle';g.className='';gt.textContent='Bahut jaldi! Dobara try karo';
+}else{
+var ms=Math.round(performance.now()-t0);
+best=best===null?ms:Math.min(best,ms);
+st='idle';g.className='';gt.textContent='Tumhara reaction: '+ms+' ms';gs.textContent='Best: '+best+' ms (dobara click karo)';
+}
+};
+
+var cv=document.getElementById('bg'),cx=cv.getContext('2d'),ps=[];
+function rs(){cv.width=innerWidth;cv.height=innerHeight}
+rs();addEventListener('resize',rs);
+for(var k=0;k<55;k++)ps.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5});
+(function draw(){
+cx.clearRect(0,0,cv.width,cv.height);
+var col=getComputedStyle(root).getPropertyValue('--a').trim()||'#8b5cff';
+cx.fillStyle=col;cx.strokeStyle=col;
+ps.forEach(function(p,i){
+p.x+=p.vx;p.y+=p.vy;
+if(p.x<0||p.x>cv.width)p.vx*=-1;
+if(p.y<0||p.y>cv.height)p.vy*=-1;
+cx.globalAlpha=.5;cx.beginPath();cx.arc(p.x,p.y,2,0,6.3);cx.fill();
+for(var j=i+1;j<ps.length;j++){
+var q=ps[j],d=Math.hypot(p.x-q.x,p.y-q.y);
+if(d<110){cx.globalAlpha=.15*(1-d/110);cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}
+}
+});
+requestAnimationFrame(draw);
+})();
+})();
+</script>
+</body>
+</html>
